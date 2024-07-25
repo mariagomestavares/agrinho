@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html class="no-touch" lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="https://viveirosaofrancisco.com.br/xmlrpc.php">
+<title>Uva Niágara Rosa &#8211; Viveiro São Francisco</title>
+<meta name='robots' content='max-image-preview:large' />
+<script type="rocketlazyloadscript">window._wca = window._wca || [];</script>
+<link rel='dns-prefetch' href='//stats.wp.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//maps.googleapis.com' />
+<link rel='dns-prefetch' href='//maps.gstatic.com' />
+<link rel='dns-prefetch' href='//fonts.gstatic.com' />
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//apis.google.com' />
+<link rel='dns-prefetch' href='//google-analytics.com' />
+<link rel='dns-prefetch' href='//www.google-analytics.com' />
+<link rel='dns-prefetch' href='//ssl.google-analytics.com' />
+<link rel='dns-prefetch' href='//youtube.com' />
+<link rel='dns-prefetch' href='//api.pinterest.com' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//connect.facebook.net' />
+<link rel='dns-prefetch' href='//platform.twitter.com' />
+<link rel='dns-prefetch' href='//syndication.twitter.com' />
+<link rel='dns-prefetch' href='//platform.instagram.com' />
+<link rel='dns-prefetch' href='//disqus.com' />
+<link rel='dns-prefetch' href='//sitename.disqus.com' />
+<link rel='dns-prefetch' href='//s7.addthis.com' />
+<link rel='dns-prefetch' href='//platform.linkedin.com' />
+<link rel='dns-prefetch' href='//w.sharethis.com' />
+<link rel='dns-prefetch' href='//i0.wp.com' />
+<link rel='dns-prefetch' href='//i1.wp.com' />
+<link rel='dns-prefetch' href='//i2.wp.com' />
+<link rel='dns-prefetch' href='//pixel.wp.com' />
+<link rel='dns-prefetch' href='//s.gravatar.com' />
+<link rel='dns-prefetch' href='//0.gravatar.com' />
+<link rel='dns-prefetch' href='//2.gravatar.com' />
+<link rel='dns-prefetch' href='//1.gravatar.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel='dns-prefetch' href='//googletagmanager.com' />
+<link rel='dns-prefetch' href='//c0.wp.com' />
+<link rel="alternate" type="application/rss+xml" title="Feed para Viveiro São Francisco &raquo;" href="https://viveirosaofrancisco.com.br/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Viveiro São Francisco &raquo;" href="https://viveirosaofrancisco.com.br/comments/feed/" />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v8.26.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script type="rocketlazyloadscript" src="//www.googletagmanager.com/gtag/js?id=G-ZVGED5D4RE"  data-cfasync="false" data-wpfc-render="false" data-rocket-type="text/javascript" async></script>
+			<script type="rocketlazyloadscript" data-cfasync="false" data-wpfc-render="false" data-rocket-type="text/javascript">
+				var mi_version = '8.26.0';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+								var MonsterInsightsDefaultLocations = {"page_location":"https:\/\/viveirosaofrancisco.com.br\/produto\/uva-niagara-rosa\/"};
+				if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
+				} else {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsExcludeQuery : MonsterInsightsDefaultLocations;
+				}
+
+								var disableStrs = [
+										'ga-disable-G-ZVGED5D4RE',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+					if ( MonsterInsightsLocations.page_location ) {
+						__gtagTracker('set', MonsterInsightsLocations);
+					}
+										__gtagTracker('config', 'G-ZVGED5D4RE', {"forceSSL":"true","link_attribution":"true"} );
+															window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+									'referrer' : 'page_referrer',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<link data-minify="1" rel='stylesheet' id='sgr-css' href='https://viveirosaofrancisco.com.br/wp-content/cache/min/1/wp-content/plugins/simple-google-recaptcha/sgr.css?ver=1716821022' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='ht_ctc_main_css-css' href='https://viveirosaofrancisco.com.br/wp-content/cache/min/1/wp-content/plugins/click-to-chat-for-whatsapp/new/inc/assets/css/main.css?ver=1716821022' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='wp-block-library-css' href='https://viveirosaofrancisco.com.br/wp-content/cache/min/1/c/6.5.5/wp-includes/css/dist/block-library/style.min.css?ver=1719294967' type='text/css' media='all' />
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<style id='jetpack-sharing-buttons-style-inline-css' type='text/css'>
+.jetpack-sharing-buttons__services-list{display:flex;flex-direction:row;flex-wrap:wrap;gap:0;list-style-type:none;margin:5px;padding:0}.jetpack-sharing-buttons__services-list.has-small-icon-size{font-size:12px}.jetpack-sharing-buttons__services-list.has-normal-icon-size{font-size:16px}.jetpack-sharing-buttons__services-list.has-large-icon-size{font-size:24px}.jetpack-sharing-buttons__services-list.has-huge-icon-size{font-size:36px}@media print{.jetpack-sharing-buttons__services-list{display:none!important}}.editor-styles-wrapper .wp-block-jetpack-sharing-buttons{gap:0;padding-inline-start:0}ul.jetpack-sharing-buttons__services-list.has-background{padding:1.25em 2.375em}
+</style>
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='uncodefont-google-css' href='//fonts.googleapis.com/css?family=Poppins%3A300%2Cregular%2C500%2C600%2C700%7CRoboto%3A100%2C100italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C700%2C700italic%2C900%2C900italic&#038;subset=devanagari%2Clatin-ext%2Cvietnamese%2Cgreek%2Ccyrillic-ext%2Ccyrillic%2Cgreek-ext%2Clatin&#038;display=swap&#038;ver=2.8.6' type='text/css' media='all' />
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link data-minify="1" rel='stylesheet' id='uncode-style-css' href='https://viveirosaofrancisco.com.br/wp-content/cache/min/1/wp-content/themes/uncode/library/css/style-core.css?ver=1716821022' type='text/css' media='all' />
+<style id='uncode-style-inline-css' type='text/css'>
+
+@media (max-width: 959px) { .navbar-brand > * { height: 60px !important;}}
+@media (min-width: 960px) { .limit-width { max-width: 1200px; margin: auto;}}
+.menu-primary ul.menu-smart > li > a, .menu-primary ul.menu-smart li.dropdown > a, .menu-primary ul.menu-smart li.mega-menu > a, .vmenu-container ul.menu-smart > li > a, .vmenu-container ul.menu-smart li.dropdown > a { text-transform: uppercase; }
+.menu-primary ul.menu-smart ul a, .vmenu-container ul.menu-smart ul a { text-transform: uppercase; }
+body.menu-custom-padding .col-lg-0.logo-container, body.menu-custom-padding .col-lg-2.logo-container, body.menu-custom-padding .col-lg-12 .logo-container, body.menu-custom-padding .col-lg-4.logo-container { padding-top: 9px; padding-bottom: 9px; }
+body.menu-custom-padding .col-lg-0.logo-container.shrinked, body.menu-custom-padding .col-lg-2.logo-container.shrinked, body.menu-custom-padding .col-lg-12 .logo-container.shrinked, body.menu-custom-padding .col-lg-4.logo-container.shrinked { padding-top: 0px; padding-bottom: 0px; }
+@media (max-width: 959px) { body.menu-custom-padding .menu-container .logo-container { padding-top: 9px !important; padding-bottom: 9px !important; } }
+#changer-back-color { transition: background-color 1000ms cubic-bezier(0.25, 1, 0.5, 1) !important; } #changer-back-color > div { transition: opacity 1000ms cubic-bezier(0.25, 1, 0.5, 1) !important; } body.bg-changer-init.disable-hover .main-wrapper .style-light,  body.bg-changer-init.disable-hover .main-wrapper .style-light h1,  body.bg-changer-init.disable-hover .main-wrapper .style-light h2, body.bg-changer-init.disable-hover .main-wrapper .style-light h3, body.bg-changer-init.disable-hover .main-wrapper .style-light h4, body.bg-changer-init.disable-hover .main-wrapper .style-light h5, body.bg-changer-init.disable-hover .main-wrapper .style-light h6, body.bg-changer-init.disable-hover .main-wrapper .style-light a, body.bg-changer-init.disable-hover .main-wrapper .style-dark, body.bg-changer-init.disable-hover .main-wrapper .style-dark h1, body.bg-changer-init.disable-hover .main-wrapper .style-dark h2, body.bg-changer-init.disable-hover .main-wrapper .style-dark h3, body.bg-changer-init.disable-hover .main-wrapper .style-dark h4, body.bg-changer-init.disable-hover .main-wrapper .style-dark h5, body.bg-changer-init.disable-hover .main-wrapper .style-dark h6, body.bg-changer-init.disable-hover .main-wrapper .style-dark a { transition: color 1000ms cubic-bezier(0.25, 1, 0.5, 1) !important; }
+</style>
+<link data-minify="1" rel='stylesheet' id='uncode-style-owlcarousel-css' href='https://viveirosaofrancisco.com.br/wp-content/cache/min/1/wp-content/themes/uncode/library/css/style-owlcarousel.css?ver=1716821598' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='uncode-style-ilightbox-css' href='https://viveirosaofrancisco.com.br/wp-content/cache/min/1/wp-content/themes/uncode/library/css/style-ilightbox.css?ver=1716821598' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='uncode-style-share-css' href='https://viveirosaofrancisco.com.br/wp-content/cache/min/1/wp-content/themes/uncode/library/css/style-share.css?ver=1716821772' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='uncode-style-navs-css' href='https://viveirosaofrancisco.com.br/wp-content/cache/min/1/wp-content/themes/uncode/library/css/style-navs.css?ver=1716821772' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='uncode-style-breadcrumbs-css' href='https://viveirosaofrancisco.com.br/wp-content/cache/min/1/wp-content/themes/uncode/library/css/style-breadcrumbs.css?ver=1716821022' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='uncode-style-widgets-css' href='https://viveirosaofrancisco.com.br/wp-content/cache/min/1/wp-content/themes/uncode/library/css/style-widgets.css?ver=1716821022' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='uncode-style-iconbox-css' href='https://viveirosaofrancisco.com.br/wp-content/cache/min/1/wp-content/themes/uncode/library/css/style-iconbox.css?ver=1716821022' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='uncode-style-single-media-css' href='https://viveirosaofrancisco.com.br/wp-content/cache/min/1/wp-content/themes/uncode/library/css/style-single-media.css?ver=1716821022' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='uncode-style-utils-css' href='https://viveirosaofrancisco.com.br/wp-content/cache/min/1/wp-content/themes/uncode/library/css/style-utils.css?ver=1716821022' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='uncode-woocommerce-css' href='https://viveirosaofrancisco.com.br/wp-content/cache/min/1/wp-content/themes/uncode/library/css/woocommerce.css?ver=1716821022' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='uncode-swatches-css' href='https://viveirosaofrancisco.com.br/wp-content/cache/min/1/wp-content/themes/uncode/library/css/style-swatches.css?ver=1716821022' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='uncode-icons-css' href='https://viveirosaofrancisco.com.br/wp-content/cache/min/1/wp-content/themes/uncode/library/css/uncode-icons.css?ver=1716821022' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='uncode-custom-style-css' href='https://viveirosaofrancisco.com.br/wp-content/cache/min/1/wp-content/themes/uncode/library/css/style-custom.css?ver=1716821022' type='text/css' media='all' />
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://viveirosaofrancisco.com.br/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<script type="text/javascript" id="sgr-js-extra">
+/* <![CDATA[ */
+var sgr = {"sgr_site_key":"6LfXt7waAAAAANDws2bwNNM2Qo1FRcd1uR8uiBaI"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/cache/min/1/wp-content/plugins/simple-google-recaptcha/sgr.js?ver=1716821022" id="sgr-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://c0.wp.com/c/6.5.5/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.26.0" id="monsterinsights-frontend-script-js" defer></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id='monsterinsights-frontend-script-js-extra'>/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/viveirosaofrancisco.com.br","hash_tracking":"false","v4_id":"G-ZVGED5D4RE"};/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.6.16" async id="tp-tools-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.6.16" async id="revmin-js"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/cache/min/1/p/woocommerce/8.9.1/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=1716821022" id="jquery-blockui-js" data-wp-strategy="defer" defer></script>
+<script type="text/javascript" id="wc-add-to-cart-js-extra">
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"Ver carrinho","cart_url":"https:\/\/viveirosaofrancisco.com.br","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/cache/min/1/p/woocommerce/8.9.1/assets/js/frontend/add-to-cart.min.js?ver=1716821022" id="wc-add-to-cart-js" data-wp-strategy="defer" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/cache/min/1/p/woocommerce/8.9.1/assets/js/zoom/jquery.zoom.min.js?ver=1716821772" id="zoom-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="wc-single-product-js-extra">
+/* <![CDATA[ */
+var wc_single_product_params = {"i18n_required_rating_text":"Selecione uma classifica\u00e7\u00e3o","review_rating_required":"yes","flexslider":{"rtl":false,"animation":"slide","smoothHeight":true,"directionNav":false,"controlNav":"thumbnails","slideshow":false,"animationSpeed":500,"animationLoop":false,"allowOneSlide":false},"zoom_enabled":"","zoom_options":[],"photoswipe_enabled":"","photoswipe_options":{"shareEl":false,"closeOnScroll":false,"history":false,"hideAnimationDuration":0,"showAnimationDuration":0},"flexslider_enabled":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/cache/min/1/p/woocommerce/8.9.1/assets/js/frontend/single-product.min.js?ver=1716821772" id="wc-single-product-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/cache/min/1/p/woocommerce/8.9.1/assets/js/js-cookie/js.cookie.min.js?ver=1716821022" id="js-cookie-js" data-wp-strategy="defer" defer></script>
+<script type="text/javascript" id="woocommerce-js-extra">
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/cache/min/1/p/woocommerce/8.9.1/assets/js/frontend/woocommerce.min.js?ver=1716821022" id="woocommerce-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/cache/min/1/wp-content/plugins/uncode-js_composer/assets/js/vendors/woocommerce-add-to-cart.js?ver=1716821022" id="vc_woocommerce-add-to-cart-js-js" defer></script>
+<script type="text/javascript" src="https://stats.wp.com/s-202430.js" id="woocommerce-analytics-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="uncode-init-js-extra">
+/* <![CDATA[ */
+var SiteParameters = {"days":"days","hours":"hours","minutes":"minutes","seconds":"seconds","constant_scroll":"on","scroll_speed":"2","parallax_factor":"0.25","loading":"Loading\u2026","slide_name":"slide","slide_footer":"footer","ajax_url":"https:\/\/viveirosaofrancisco.com.br\/wp-admin\/admin-ajax.php","nonce_adaptive_images":"06e72f3cae","nonce_srcset_async":"ad2aa507bd","enable_debug":"","block_mobile_videos":"","is_frontend_editor":"","main_width":["1200","px"],"mobile_parallax_allowed":"","listen_for_screen_update":"1","wireframes_plugin_active":"","sticky_elements":"off","resize_quality":"100","register_metadata":"","bg_changer_time":"1000","update_wc_fragments":"1","optimize_shortpixel_image":"","menu_mobile_offcanvas_gap":"45","custom_cursor_selector":"[href], .trigger-overlay, .owl-next, .owl-prev, .owl-dot, input[type=\"submit\"], input[type=\"checkbox\"], button[type=\"submit\"], a[class^=\"ilightbox\"], .ilightbox-thumbnail, .ilightbox-prev, .ilightbox-next, .overlay-close, .unmodal-close, .qty-inset > span, .share-button li, .uncode-post-titles .tmb.tmb-click-area, .btn-link, .tmb-click-row .t-inside, .lg-outer button, .lg-thumb img, a[data-lbox], .uncode-close-offcanvas-overlay","mobile_parallax_animation":"","lbox_enhanced":"","native_media_player":"1","vimeoPlayerParams":"?autoplay=0","ajax_filter_key_search":"key","ajax_filter_key_unfilter":"unfilter","index_pagination_scroll_to":"","uncode_wc_popup_cart_qty":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/init.min.js" id="uncode-init-js"></script>
+<script type="rocketlazyloadscript"></script><link rel="https://api.w.org/" href="https://viveirosaofrancisco.com.br/wp-json/" /><link rel="alternate" type="application/json" href="https://viveirosaofrancisco.com.br/wp-json/wp/v2/product/212" /><link rel="canonical" href="https://viveirosaofrancisco.com.br/produto/uva-niagara-rosa/" />
+<link rel="alternate" type="application/json+oembed" href="https://viveirosaofrancisco.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fviveirosaofrancisco.com.br%2Fproduto%2Fuva-niagara-rosa%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://viveirosaofrancisco.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fviveirosaofrancisco.com.br%2Fproduto%2Fuva-niagara-rosa%2F&#038;format=xml" />
+	<style>img#wpstats{display:none}</style>
+		<style>.woocommerce-product-gallery{ opacity: 1 !important; }</style>		<script type="rocketlazyloadscript">
+			( function() {
+				window.onpageshow = function( event ) {
+					// Defined window.wpforms means that a form exists on a page.
+					// If so and back/forward button has been clicked,
+					// force reload a page to prevent the submit button state stuck.
+					if ( typeof window.wpforms !== 'undefined' && event.persisted ) {
+						window.location.reload();
+					}
+				};
+			}() );
+		</script>
+			<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><meta name="generator" content="Powered by Slider Revolution 6.6.16 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<link rel="icon" href="https://i0.wp.com/viveirosaofrancisco.com.br/wp-content/uploads/2022/12/cropped-icon-viveiro.png?fit=32%2C32&#038;ssl=1" sizes="32x32" />
+<link rel="icon" href="https://i0.wp.com/viveirosaofrancisco.com.br/wp-content/uploads/2022/12/cropped-icon-viveiro.png?fit=192%2C192&#038;ssl=1" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://i0.wp.com/viveirosaofrancisco.com.br/wp-content/uploads/2022/12/cropped-icon-viveiro.png?fit=180%2C180&#038;ssl=1" />
+<meta name="msapplication-TileImage" content="https://i0.wp.com/viveirosaofrancisco.com.br/wp-content/uploads/2022/12/cropped-icon-viveiro.png?fit=270%2C270&#038;ssl=1" />
+<script type="rocketlazyloadscript">function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;
+				try {
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) || (e.l=="fullwidth" || e.layout=="fullwidth") ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);
+					if(e.layout==="fullscreen" || e.l==="fullscreen")
+						newh = Math.max(e.mh,window.RSIH);
+					else{
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,
+							sl;
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}
+					var el = document.getElementById(e.c);
+					if (el!==null && el) el.style.height = newh+"px";
+					el = document.getElementById(e.c+"_wrapper");
+					if (el!==null && el) {
+						el.style.height = newh+"px";
+						el.style.display = "block";
+					}
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}
+			//});
+		  };</script>
+<noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+<body data-rsssl=1 class="product-template-default single single-product postid-212  style-color-xsdn-bg theme-uncode woocommerce woocommerce-page woocommerce-no-js hormenu-position-left hmenu hmenu-position-right header-full-width main-center-align menu-custom-padding textual-accent-color menu-sticky-mobile menu-mobile-default mobile-parallax-not-allowed ilb-no-bounce qw-body-scroll-disabled menu-sticky-fix no-qty-fx uncode-sidecart-mobile-disabled no-product-upsells wpb-js-composer js-comp-ver-7.0 vc_responsive" data-border="0">
+		<div id="vh_layout_help"></div><div class="body-borders" data-border="0"><div class="top-border body-border-shadow"></div><div class="right-border body-border-shadow"></div><div class="bottom-border body-border-shadow"></div><div class="left-border body-border-shadow"></div><div class="top-border style-light-bg"></div><div class="right-border style-light-bg"></div><div class="bottom-border style-light-bg"></div><div class="left-border style-light-bg"></div></div>	<div class="box-wrapper">
+		<div class="box-container">
+		<script type="text/javascript" id="initBox">UNCODE.initBox();</script>
+		<div class="menu-wrapper menu-shrink menu-sticky menu-sticky-mobile">
+													
+													<header id="masthead" class="navbar menu-primary menu-dark submenu-dark menu-transparent menu-add-padding style-dark-original menu-absolute menu-animated menu-with-logo">
+														<div class="menu-container menu-hide style-color-101746-bg menu-no-borders menu-shadows">
+															<div class="row-menu limit-width">
+																<div class="row-menu-inner">
+																	<div id="logo-container-mobile" class="col-lg-0 logo-container middle">
+																		<div id="main-logo" class="navbar-header style-dark">
+																			<a href="https://viveirosaofrancisco.com.br/" class="navbar-brand" data-padding-shrink ="0" data-minheight="50"><div class="logo-image main-logo logo-skinnable" data-maxheight="80" style="height: 80px;"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20377%20114'%3E%3C/svg%3E" alt="logo" width="377" height="114" class="img-responsive" data-lazy-src="https://viveirosaofrancisco.com.br/wp-content/uploads/2018/03/viveiro-sao-francisco.png" /><noscript><img decoding="async" src="https://viveirosaofrancisco.com.br/wp-content/uploads/2018/03/viveiro-sao-francisco.png" alt="logo" width="377" height="114" class="img-responsive" /></noscript></div></a>
+																		</div>
+																		<div class="mmb-container"><div class="mobile-additional-icons"></div><div class="mobile-menu-button mobile-menu-button-dark lines-button"><span class="lines"><span></span></span></div></div>
+																	</div>
+																	<div class="col-lg-12 main-menu-container middle">
+																		<div class="menu-horizontal menu-dd-shadow-std ">
+																			<div class="menu-horizontal-inner">
+																				<div class="nav navbar-nav navbar-main navbar-nav-last"><ul id="menu-home" class="menu-primary-inner menu-smart sm"><li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-20 menu-item-link"><a title="Sobre o Viveiro" href="https://viveirosaofrancisco.com.br/#quem-somos">Sobre o Viveiro<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+<li id="menu-item-21" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-21 dropdown menu-item-link"><a title="Destaques" href="https://viveirosaofrancisco.com.br/#destaques" data-toggle="dropdown" class="dropdown-toggle" data-type="title">Destaques<i class="fa fa-angle-down fa-dropdown"></i></a>
+<ul role="menu" class="drop-menu">
+	<li id="menu-item-3104" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3104"><a title="Morango EMBRAPA" href="https://viveirosaofrancisco.com.br/produto/morango-brs-dc25-fenix/"><i class="menu-icon fa fa-star"></i>Morango EMBRAPA<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-817" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-817"><a title="Batatas Doce EMBRAPA" href="https://viveirosaofrancisco.com.br/batatas-doce/"><i class="menu-icon fa fa-star"></i>Batatas Doce EMBRAPA<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-782" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-782"><a title="Pêssegos EMBRAPA" href="https://viveirosaofrancisco.com.br/mudas-frutiferas/pessegos-embrapa/"><i class="menu-icon fa fa-star"></i>Pêssegos EMBRAPA<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+</ul>
+</li>
+<li id="menu-item-664" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-664 dropdown menu-item-link"><a title="Mudas Frutíferas" href="https://viveirosaofrancisco.com.br/mudas-frutiferas/" data-toggle="dropdown" class="dropdown-toggle" data-type="title">Mudas Frutíferas<i class="fa fa-angle-down fa-dropdown"></i></a>
+<ul role="menu" class="drop-menu">
+	<li id="menu-item-670" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-670"><a title="Ameixas" href="https://viveirosaofrancisco.com.br/mudas-frutiferas/ameixas/">Ameixas<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-677" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-677"><a title="Bergamotas" href="https://viveirosaofrancisco.com.br/mudas-frutiferas/bergamotas/">Bergamotas<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-675" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-675"><a title="Caquis" href="https://viveirosaofrancisco.com.br/mudas-frutiferas/caquis/">Caquis<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-667" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-667"><a title="Exóticas" href="https://viveirosaofrancisco.com.br/mudas-frutiferas/exoticas/">Exóticas<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-669" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-669"><a title="Figos" href="https://viveirosaofrancisco.com.br/mudas-frutiferas/figos/">Figos<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-678"><a title="Laranjas" href="https://viveirosaofrancisco.com.br/mudas-frutiferas/laranjas/">Laranjas<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-676"><a title="Limas e Limões" href="https://viveirosaofrancisco.com.br/mudas-frutiferas/limas-e-limoes/">Limas e Limões<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-674" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-674"><a title="Maçãs" href="https://viveirosaofrancisco.com.br/mudas-frutiferas/macas/">Maçãs<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-666" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-666"><a title="Nativas" href="https://viveirosaofrancisco.com.br/mudas-frutiferas/nativas/">Nativas<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-668" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-668"><a title="Pêras" href="https://viveirosaofrancisco.com.br/mudas-frutiferas/peras/">Pêras<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-672" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-672"><a title="Pêssegos Amarelos" href="https://viveirosaofrancisco.com.br/mudas-frutiferas/pessegos-amarelos/">Pêssegos Amarelos<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-671" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-671"><a title="Pêssegos Brancos" href="https://viveirosaofrancisco.com.br/mudas-frutiferas/pessegos-brancos/">Pêssegos Brancos<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-2994" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2994"><a title="Pomelos" href="https://viveirosaofrancisco.com.br/mudas-frutiferas/pomelos">Pomelos<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-2993" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2993"><a title="Tangelos" href="https://viveirosaofrancisco.com.br/mudas-frutiferas/tangelo/">Tangelos<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-665" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-665"><a title="Tropicais" href="https://viveirosaofrancisco.com.br/mudas-frutiferas/tropicais/">Tropicais<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-673" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-673"><a title="Uvas" href="https://viveirosaofrancisco.com.br/mudas-frutiferas/uvas/">Uvas<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+</ul>
+</li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-718 dropdown menu-item-link"><a title="Mudas Ornamentais" href="https://viveirosaofrancisco.com.br/mudas-ornamentais/" data-toggle="dropdown" class="dropdown-toggle" data-type="title">Mudas Ornamentais<i class="fa fa-angle-down fa-dropdown"></i></a>
+<ul role="menu" class="drop-menu">
+	<li id="menu-item-722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-722"><a title="Árvores de Sombra" href="https://viveirosaofrancisco.com.br/mudas-ornamentais/arvores-de-sombra/">Árvores de Sombra<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-723" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-723"><a title="Flores" href="https://viveirosaofrancisco.com.br/mudas-ornamentais/flores/">Flores<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-719" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-719"><a title="Nobres" href="https://viveirosaofrancisco.com.br/mudas-ornamentais/nobres/">Nobres<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-720" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-720"><a title="Ornamentais" href="https://viveirosaofrancisco.com.br/mudas-ornamentais/ornamentais/">Ornamentais<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	<li id="menu-item-721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-721"><a title="Rosas" href="https://viveirosaofrancisco.com.br/mudas-ornamentais/rosas/">Rosas<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+</ul>
+</li>
+<li id="menu-item-2169" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2169 menu-item-link"><a title="Orçamentos" href="https://viveirosaofrancisco.com.br/orcamentos/">Orçamentos<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+<li id="menu-item-24" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24 menu-item-link"><a title="Contato" href="https://viveirosaofrancisco.com.br/contato">Contato<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+</ul></div><div class="uncode-close-offcanvas-mobile lines-button close navbar-mobile-el"><span class="lines"></span></div></div>
+																		</div>
+																	</div>
+																</div>
+															</div></div>
+													</header>
+												</div>			<script type="text/javascript" id="fixMenuHeight">UNCODE.fixMenuHeight();</script>
+			<div class="main-wrapper">
+				<div class="main-container">
+					<div class="page-wrapper">
+						<div class="sections-container">
+<script type="text/javascript">UNCODE.initHeader();</script><div class="row-container row-breadcrumb row-breadcrumb-light text-left">
+		  					<div class="row row-parent style-light limit-width">
+									<div class="breadcrumb-title h5 text-bold">Uva Niágara Rosa</div><ol class="breadcrumb header-subtitle"><li><a href="https://viveirosaofrancisco.com.br/">Home</a></li><li><a href="https://viveirosaofrancisco.com.br/shop/">Produtos</a></li><li class="current">Uva Niágara Rosa</li></ol>
+								</div>
+							</div>
+		<div id="product-212" class="page-body style-light style-light-bg post-212 product type-product status-publish has-post-thumbnail product_cat-uvas product_tag-uvas first instock shipping-taxable product-type-simple">
+			<div class="post-wrapper">
+				<div class="post-body">
+<div class="woocommerce-notices-wrapper"></div>
+<div class="product type-product post-212 status-publish instock product_cat-uvas product_tag-uvas has-post-thumbnail shipping-taxable product-type-simple">
+	<div class="row-container">
+		<div class="row row-parent col-std-gutter double-top-padding double-bottom-padding  limit-width" >
+			<div class="row-inner">
+				<div class="col-lg-4">
+					<div class="uncol">
+						<div class="uncoltable">
+							<div class="uncell">
+								<div class="uncont">
+										
+<div class="uncode-wrapper uncode-single-product-gallery">
+
+
+<div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-3 woocommerce-layout-images- images woocommerce-product-gallery--zoom-disabled" data-columns="3" style="opacity: 0; transition: opacity .05s ease-in-out;" data-gallery-options="{&quot;globals&quot;:{&quot;vc_column_inner_width&quot;:null},&quot;default_images&quot;:[213]}">
+		<div class="woocommerce-product-gallery__wrapper">
+
+	<div class="woocommerce-product-gallery__image woocommerce-product-gallery__image-first"><span class="zoom-overlay"></span><a href="https://i0.wp.com/viveirosaofrancisco.com.br/wp-content/uploads/2019/02/uva-niagara-rosa.jpg?fit=500%2C500&#038;ssl=1" itemprop="image" class="woocommerce-main-image" data-transparency="transparent" data-counter="on" data-caption="" data-options="thumbnail: 'https://viveirosaofrancisco.com.br/wp-content/uploads/2019/02/uva-niagara-rosa.jpg'" data-lbox="ilightbox_gallery-149034" data-lb-index="0"><img width="500" height="500" src="https://i0.wp.com/viveirosaofrancisco.com.br/wp-content/uploads/2019/02/uva-niagara-rosa.jpg?fit=500%2C500&amp;ssl=1" class="woocommerce-product-gallery__image-first__img wp-post-image" alt="" data-src="https://i0.wp.com/viveirosaofrancisco.com.br/wp-content/uploads/2019/02/uva-niagara-rosa.jpg?fit=500%2C500&amp;ssl=1" data-caption="uva-niagara-rosa" data-large_image="https://i0.wp.com/viveirosaofrancisco.com.br/wp-content/uploads/2019/02/uva-niagara-rosa.jpg?fit=500%2C500&amp;ssl=1" data-large_image_width="500" data-large_image_height="500" decoding="async" fetchpriority="high" srcset="https://i0.wp.com/viveirosaofrancisco.com.br/wp-content/uploads/2019/02/uva-niagara-rosa.jpg?w=500&amp;ssl=1 500w, https://i0.wp.com/viveirosaofrancisco.com.br/wp-content/uploads/2019/02/uva-niagara-rosa.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/viveirosaofrancisco.com.br/wp-content/uploads/2019/02/uva-niagara-rosa.jpg?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/viveirosaofrancisco.com.br/wp-content/uploads/2019/02/uva-niagara-rosa.jpg?resize=100%2C100&amp;ssl=1 100w" sizes="(max-width: 500px) 100vw, 500px" /></a></div>
+	
+	</div>
+</div>
+
+
+</div>								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-8">
+					<div class="uncol">
+						<div class="uncoltable">
+							<div class="uncell">
+								<div class="uncont">
+									<h1 class="product_title entry-title">Uva Niágara Rosa</h1><div class="price-container">
+
+	<span class="price"><ins class="h3"></ins></span>
+
+</div>
+<hr />
+<div class="product_meta">
+	<p>
+	
+	
+	<span class="posted_in detail-container"><span class="detail-label">Categoria</span><span class="detail-value"> <a href="https://viveirosaofrancisco.com.br/produto-categoria/frutiferas/uvas/" rel="tag">Uvas</a></span></span>
+	<span class="tagged_as detail-container"><span class="detail-label">Tag</span><span class="detail-value"> <a href="https://viveirosaofrancisco.com.br/produto-tag/uvas/" rel="tag">uvas</a></span></span>
+		</p>
+</div>
+<hr />
+
+<div class="detail-container">
+	<span class="detail-label">Share</span>
+	<div class="share-button share-buttons share-inline only-icon"></div>
+</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row-container row-related">
+		  					<div class="row row-parent style- limit-width no-top-padding">
+									
+	<div class="related products">
+
+					<h5 class="related-title">Produtos relacionados</h5>
+		
+		<div class="owl-carousel-wrapper">
+	<div class="owl-carousel-container owl-carousel-loading half-gutter">
+		<div id="index-123203" class="owl-carousel owl-element owl-theme owl-dots-outside owl-height-auto" data-loop="false" data-dots="true" data-nav="false" data-navspeed="400" data-autoplay="false" data-lg="4" data-md="2" data-sm="1">
+
+			
+				<div class="tmb tmb-light tmb-content-center tmb-no-bg tmb-woocommerce tmb-overlay-anim tmb-overlay-text-anim tmb-iso-w3 post-219 product type-product status-publish has-post-thumbnail product_cat-uvas product_tag-uvas first instock shipping-taxable product-type-simple tmb-content-under tmb-media-first tmb-no-bg" ><div class="t-inside" ><div class="t-entry-visual"><div class="t-entry-visual-tc"><div class="t-entry-visual-cont"><div class="dummy" style="padding-top: 100%;"></div><a tabindex="-1" href="https://viveirosaofrancisco.com.br/produto/uva-niagara-branca/" class="pushed"><div class="t-entry-visual-overlay"><div class="t-entry-visual-overlay-in style-dark-bg" style="opacity: 0.2;"></div></div><img class="wp-image-220" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20500'%3E%3C/svg%3E" width="500" height="500" alt="" data-lazy-src="https://viveirosaofrancisco.com.br/wp-content/uploads/2019/02/uva-niagara-branca.jpg" /><noscript><img class="wp-image-220" src="https://viveirosaofrancisco.com.br/wp-content/uploads/2019/02/uva-niagara-branca.jpg" width="500" height="500" alt="" /></noscript></a><div class="add-to-cart-overlay"><a href="https://viveirosaofrancisco.com.br/produto/uva-niagara-branca/" data-quantity="1" class="product_type_simple product_button_loop" data-product_id="219" data-product_sku="" aria-label="Leia mais sobre &ldquo;Uva Niágara Branca&rdquo;" aria-describedby="" rel="nofollow"><span class="add_to_cart_text">Leia mais</span><span class="view-cart added_to_cart"></span></a></div></div>
+					</div>
+				</div><div class="t-entry-text">
+									<div class="t-entry-text-tc half-block-padding"><div class="t-entry"><h3 class="t-entry-title h6"><a href="https://viveirosaofrancisco.com.br/produto/uva-niagara-branca/">Uva Niágara Branca</a></h3><span class="price h6"><ins class="h3"></ins></span></div></div>
+							</div></div></div>
+			
+				<div class="tmb tmb-light tmb-content-center tmb-no-bg tmb-woocommerce tmb-overlay-anim tmb-overlay-text-anim tmb-iso-w4 post-215 product type-product status-publish has-post-thumbnail product_cat-uvas product_tag-uvas first instock shipping-taxable product-type-simple tmb-content-under tmb-media-first tmb-no-bg" ><div class="t-inside" ><div class="t-entry-visual"><div class="t-entry-visual-tc"><div class="t-entry-visual-cont"><div class="dummy" style="padding-top: 100%;"></div><a tabindex="-1" href="https://viveirosaofrancisco.com.br/produto/uva-bordo-para-vinho/" class="pushed"><div class="t-entry-visual-overlay"><div class="t-entry-visual-overlay-in style-dark-bg" style="opacity: 0.2;"></div></div><img class="wp-image-216" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20500'%3E%3C/svg%3E" width="500" height="500" alt="" data-lazy-src="https://viveirosaofrancisco.com.br/wp-content/uploads/2019/02/uva-bordo-vinhoj.jpg" /><noscript><img class="wp-image-216" src="https://viveirosaofrancisco.com.br/wp-content/uploads/2019/02/uva-bordo-vinhoj.jpg" width="500" height="500" alt="" /></noscript></a><div class="add-to-cart-overlay"><a href="https://viveirosaofrancisco.com.br/produto/uva-bordo-para-vinho/" data-quantity="1" class="product_type_simple product_button_loop" data-product_id="215" data-product_sku="" aria-label="Leia mais sobre &ldquo;Uva Bordô para Vinho&rdquo;" aria-describedby="" rel="nofollow"><span class="add_to_cart_text">Leia mais</span><span class="view-cart added_to_cart"></span></a></div></div>
+					</div>
+				</div><div class="t-entry-text">
+									<div class="t-entry-text-tc half-block-padding"><div class="t-entry"><h3 class="t-entry-title h6"><a href="https://viveirosaofrancisco.com.br/produto/uva-bordo-para-vinho/">Uva Bordô para Vinho</a></h3><span class="price h6"><ins class="h3"></ins></span></div></div>
+							</div></div></div>
+			
+				<div class="tmb tmb-light tmb-content-center tmb-no-bg tmb-woocommerce tmb-overlay-anim tmb-overlay-text-anim tmb-iso-w4 post-210 product type-product status-publish has-post-thumbnail product_cat-uvas product_tag-uvas first instock shipping-taxable product-type-simple tmb-content-under tmb-media-first tmb-no-bg" ><div class="t-inside" ><div class="t-entry-visual"><div class="t-entry-visual-tc"><div class="t-entry-visual-cont"><div class="dummy" style="padding-top: 100%;"></div><a tabindex="-1" href="https://viveirosaofrancisco.com.br/produto/uva-francesa-preta/" class="pushed"><div class="t-entry-visual-overlay"><div class="t-entry-visual-overlay-in style-dark-bg" style="opacity: 0.2;"></div></div><img class="wp-image-211" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20500'%3E%3C/svg%3E" width="500" height="500" alt="" data-lazy-src="https://viveirosaofrancisco.com.br/wp-content/uploads/2019/02/uva-francesa-preta.jpg" /><noscript><img class="wp-image-211" src="https://viveirosaofrancisco.com.br/wp-content/uploads/2019/02/uva-francesa-preta.jpg" width="500" height="500" alt="" /></noscript></a><div class="add-to-cart-overlay"><a href="https://viveirosaofrancisco.com.br/produto/uva-francesa-preta/" data-quantity="1" class="product_type_simple product_button_loop" data-product_id="210" data-product_sku="" aria-label="Leia mais sobre &ldquo;Uva Francesa Preta&rdquo;" aria-describedby="" rel="nofollow"><span class="add_to_cart_text">Leia mais</span><span class="view-cart added_to_cart"></span></a></div></div>
+					</div>
+				</div><div class="t-entry-text">
+									<div class="t-entry-text-tc half-block-padding"><div class="t-entry"><h3 class="t-entry-title h6"><a href="https://viveirosaofrancisco.com.br/produto/uva-francesa-preta/">Uva Francesa Preta</a></h3><span class="price h6"><ins class="h3"></ins></span></div></div>
+							</div></div></div>
+			
+				</div>
+	</div>
+</div>
+	</div>
+
+
+								</div>
+							</div></div>			</div>
+		</div>
+		<meta itemprop="url" content="https://viveirosaofrancisco.com.br/produto/uva-niagara-rosa/" /><!-- #product-212 -->
+		<div class="row-container row-navigation row-navigation-light">
+		  					<div class="row row-parent style-light limit-width">
+									<nav class="post-navigation">
+									<ul class="navigation"><li class="page-prev"><span class="btn-container"><a class="btn btn-link text-default-color btn-icon-left" href="https://viveirosaofrancisco.com.br/produto/uva-francesa-preta/" rel="prev"><i class="fa fa-angle-left"></i><span>Uva Francesa Preta</span></a></span></li><li class="page-next"><span class="btn-container"><a class="btn btn-link text-default-color btn-icon-right" href="https://viveirosaofrancisco.com.br/produto/uva-bordo-para-vinho/" rel="next"><span>Uva Bordô para Vinho</span><i class="fa fa-angle-right"></i></a></span></li></ul><!-- .navigation -->
+							</nav><!-- .post-navigation -->
+								</div>
+							</div>	
+	
+								</div><!-- sections container -->
+							</div><!-- page wrapper -->
+												<footer id="colophon" class="site-footer">
+							<div data-parent="true" class="vc_row style-color-207149-bg row-container" id="row-unique-0"><div class="row-background background-element">
+											<div class="background-wrapper">
+												<div data-bg="https://viveirosaofrancisco.com.br/wp-content/uploads/2018/03/banner-23.jpg" class="background-inner rocket-lazyload" style="background-repeat: no-repeat;background-position: center center;background-attachment: fixed;background-size: cover;"></div>
+												<div class="block-bg-overlay style-color-101746-bg" style="opacity: 0.88;"></div>
+											</div>
+										</div><div class="row limit-width row-parent"><div class="wpb_row row-inner"><div class="wpb_column pos-middle pos-center align_center column_parent col-lg-3 single-internal-gutter"><div class="uncol style-dark animate_when_almost_visible bottom-t-top"  data-speed="1000"><div class="uncoltable"><div class="uncell no-block-padding" ><div class="uncont"><div class="uncode-single-media  text-left"><div class="single-wrapper" style="max-width: 100%;"><div class="tmb tmb-light  tmb-media-first tmb-media-last tmb-content-overlay tmb-no-bg"><div class="t-inside"><div class="t-entry-visual"><div class="t-entry-visual-tc"><div class="uncode-single-media-wrapper"><img decoding="async" class="wp-image-25" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20377%20114'%3E%3C/svg%3E" width="377" height="114" alt="" data-lazy-srcset="https://i0.wp.com/viveirosaofrancisco.com.br/wp-content/uploads/2018/03/viveiro-sao-francisco.png?w=377&amp;ssl=1 377w, https://i0.wp.com/viveirosaofrancisco.com.br/wp-content/uploads/2018/03/viveiro-sao-francisco.png?resize=300%2C91&amp;ssl=1 300w" data-lazy-sizes="(max-width: 377px) 100vw, 377px" data-lazy-src="https://viveirosaofrancisco.com.br/wp-content/uploads/2018/03/viveiro-sao-francisco.png" /><noscript><img decoding="async" class="wp-image-25" src="https://viveirosaofrancisco.com.br/wp-content/uploads/2018/03/viveiro-sao-francisco.png" width="377" height="114" alt="" srcset="https://i0.wp.com/viveirosaofrancisco.com.br/wp-content/uploads/2018/03/viveiro-sao-francisco.png?w=377&amp;ssl=1 377w, https://i0.wp.com/viveirosaofrancisco.com.br/wp-content/uploads/2018/03/viveiro-sao-francisco.png?resize=300%2C91&amp;ssl=1 300w" sizes="(max-width: 377px) 100vw, 377px" /></noscript></div>
+					</div>
+				</div></div></div></div></div></div></div></div></div></div><div class="wpb_column pos-middle pos-center align_center column_parent col-lg-3 single-internal-gutter"><div class="uncol style-dark animate_when_almost_visible bottom-t-top"  data-speed="1000"><div class="uncoltable"><div class="uncell no-block-padding" ><div class="uncont"><div class="vc_wp_custommenu wpb_content_element"  data-id="1"><div class="widget widget_nav_menu"><div class="menu-menu-rodape-container"><ul id="menu-menu-rodape" class="menu"><li id="menu-item-728" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-728"><a href="https://viveirosaofrancisco.com.br/#quem-somos">Quem Somos</a></li>
+<li id="menu-item-730" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-730"><a href="https://viveirosaofrancisco.com.br/#destaques">Destaques</a></li>
+<li id="menu-item-726" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-726"><a href="https://viveirosaofrancisco.com.br/mudas-frutiferas/">Mudas Frutíferas</a></li>
+<li id="menu-item-727" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-727"><a href="https://viveirosaofrancisco.com.br/mudas-ornamentais/">Mudas Ornamentais</a></li>
+<li id="menu-item-3056" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3056"><a href="https://viveirosaofrancisco.com.br/orcamentos/">Orçamentos</a></li>
+<li id="menu-item-3055" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3055"><a href="https://viveirosaofrancisco.com.br/contato/">Contato</a></li>
+</ul></div></div></div></div></div></div></div></div><div class="wpb_column pos-middle pos-center align_center column_parent col-lg-3 single-internal-gutter"><div class="uncol style-dark animate_when_almost_visible bottom-t-top"  data-speed="1000"><div class="uncoltable"><div class="uncell no-block-padding" ><div class="uncont"><div class="uncode_text_column" ><h4 style="text-align: center;">Fixo: (55) 99175.4736</h4>
+<h4 style="text-align: center;">Celular: (55) 98405.0819</h4>
+</div><div class="uncode_text_column" ><p><a href="mailto:viveirosaofrancisco@yahoo.com.br">viveirosaofrancisco@yahoo.com.br</a></p>
+</div></div></div></div></div></div><div class="wpb_column pos-middle pos-center align_center column_parent col-lg-3 half-internal-gutter"><div class="uncol style-dark animate_when_almost_visible bottom-t-top"  data-speed="1000"><div class="uncoltable"><div class="uncell no-block-padding" ><div class="uncont"><div class="uncode_text_column" ><h4 style="text-align: center;">Onde Estamos</h4>
+<p style="text-align: center;">RS-155, Km 6 &#8211; Santana, Ijuí/RS, 98700-000</p>
+</div><span class="btn-container" ><a href="https://goo.gl/maps/2snb4b3kYzhALUdG6" class="custom-link btn btn-link border-width-0 text-color-105106-color btn-icon-left" target="_blank"><i class="fa fa-map-marker"></i>Ver no Mapa</a></span></div></div></div></div></div><script id="script-row-unique-0" data-row="script-row-unique-0" type="text/javascript" class="vc_controls">UNCODE.initRow(document.getElementById("row-unique-0"));</script></div></div></div><div class="row-container style-color-xsdn-bg footer-last">
+		  					<div class="row row-parent style-light limit-width no-top-padding no-h-padding no-bottom-padding">
+									<div class="site-info uncell col-lg-6 pos-middle text-right"><p style="font-size: 20px;">Desenvolvido pela <a href="https://ouseweb.com.br" target="_blank" rel="noopener"><strong>OUSE</strong></a></p>
+</div><!-- site info -->
+								</div>
+							</div>						</footer>
+																	</div><!-- main container -->
+				</div><!-- main wrapper -->
+							</div><!-- box container -->
+					</div><!-- box wrapper -->
+		
+		
+	
+		<script type="rocketlazyloadscript">
+			window.RS_MODULES = window.RS_MODULES || {};
+			window.RS_MODULES.modules = window.RS_MODULES.modules || {};
+			window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
+			window.RS_MODULES.defered = false;
+			window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
+			window.RS_MODULES.type = 'compiled';
+		</script>
+		
+		<script type="rocketlazyloadscript">
+			window.addEventListener("load", function(){
+				jQuery( document ).on( 'change', '.quantity .qty', function() {
+					jQuery( this ).closest('form.cart').find('.add_to_cart_button').attr( 'data-quantity', jQuery( this ).val() );
+				});
+			}, false);
+		</script>
+
+    <!-- Click to Chat - https://holithemes.com/plugins/click-to-chat/  v4.3 -->  
+            <div class="ht-ctc ht-ctc-chat ctc-analytics ctc_wp_desktop style-3_1  " id="ht-ctc-chat"  
+                style="display: none;  position: fixed; bottom: 10px; right: 10px;"   >
+                                <div class="ht_ctc_style ht_ctc_chat_style">
+                <style id="ht-ctc-s3">
+.ht-ctc .ctc_s_3_1:hover svg stop{stop-color:#25D366;}.ht-ctc .ctc_s_3_1:hover .ht_ctc_padding,.ht-ctc .ctc_s_3_1:hover .ctc_cta_stick{background-color:#25D366 !important;box-shadow:0px 0px 11px rgba(0,0,0,.5);}
+</style>
+
+<div title = 'WhatsApp' style="display:flex;justify-content:center;align-items:center; " class="ctc_s_3_1 ctc_s3_1 ctc_nb" data-nb_top="-4px" data-nb_right="-4px">
+    <p class="ctc-analytics ctc_cta ctc_cta_stick ht-ctc-cta " style="padding: 0px 16px; line-height: 1.6; ; background-color: #25d366; color: #ffffff; border-radius:10px; margin:0 10px;  display: none; ">WhatsApp</p>
+    <div class="ctc-analytics ht_ctc_padding" style="background-color: #25D366; padding: 14px; border-radius: 50%; box-shadow: 0px 0px 11px rgba(0,0,0,.5);">
+        <svg style="pointer-events:none; display:block; height:40px; width:40px;" width="40px" height="40px" viewBox="0 0 1219.547 1225.016">
+            <path style="fill: #E0E0E0;" fill="#E0E0E0" d="M1041.858 178.02C927.206 63.289 774.753.07 612.325 0 277.617 0 5.232 272.298 5.098 606.991c-.039 106.986 27.915 211.42 81.048 303.476L0 1225.016l321.898-84.406c88.689 48.368 188.547 73.855 290.166 73.896h.258.003c334.654 0 607.08-272.346 607.222-607.023.056-162.208-63.052-314.724-177.689-429.463zm-429.533 933.963h-.197c-90.578-.048-179.402-24.366-256.878-70.339l-18.438-10.93-191.021 50.083 51-186.176-12.013-19.087c-50.525-80.336-77.198-173.175-77.16-268.504.111-278.186 226.507-504.503 504.898-504.503 134.812.056 261.519 52.604 356.814 147.965 95.289 95.36 147.728 222.128 147.688 356.948-.118 278.195-226.522 504.543-504.693 504.543z"/>
+            <linearGradient id="htwaicona-chat" gradientUnits="userSpaceOnUse" x1="609.77" y1="1190.114" x2="609.77" y2="21.084">
+                <stop id="s3_1_offset_1" offset="0" stop-color="#25D366"/>
+                <stop id="s3_1_offset_2" offset="1" stop-color="#25D366"/>
+            </linearGradient>
+            <path style="fill: url(#htwaicona-chat);" fill="url(#htwaicona-chat)" d="M27.875 1190.114l82.211-300.18c-50.719-87.852-77.391-187.523-77.359-289.602.133-319.398 260.078-579.25 579.469-579.25 155.016.07 300.508 60.398 409.898 169.891 109.414 109.492 169.633 255.031 169.57 409.812-.133 319.406-260.094 579.281-579.445 579.281-.023 0 .016 0 0 0h-.258c-96.977-.031-192.266-24.375-276.898-70.5l-307.188 80.548z"/>
+            <image overflow="visible" opacity=".08" width="682" height="639" transform="translate(270.984 291.372)"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" style="fill: #FFF;" fill="#FFF" d="M462.273 349.294c-11.234-24.977-23.062-25.477-33.75-25.914-8.742-.375-18.75-.352-28.742-.352-10 0-26.25 3.758-39.992 18.766-13.75 15.008-52.5 51.289-52.5 125.078 0 73.797 53.75 145.102 61.242 155.117 7.5 10 103.758 166.266 256.203 226.383 126.695 49.961 152.477 40.023 179.977 37.523s88.734-36.273 101.234-71.297c12.5-35.016 12.5-65.031 8.75-71.305-3.75-6.25-13.75-10-28.75-17.5s-88.734-43.789-102.484-48.789-23.75-7.5-33.75 7.516c-10 15-38.727 48.773-47.477 58.773-8.75 10.023-17.5 11.273-32.5 3.773-15-7.523-63.305-23.344-120.609-74.438-44.586-39.75-74.688-88.844-83.438-103.859-8.75-15-.938-23.125 6.586-30.602 6.734-6.719 15-17.508 22.5-26.266 7.484-8.758 9.984-15.008 14.984-25.008 5-10.016 2.5-18.773-1.25-26.273s-32.898-81.67-46.234-111.326z"/>
+            <path style="fill: #FFFFFF;" fill="#FFF" d="M1036.898 176.091C923.562 62.677 772.859.185 612.297.114 281.43.114 12.172 269.286 12.039 600.137 12 705.896 39.633 809.13 92.156 900.13L7 1211.067l318.203-83.438c87.672 47.812 186.383 73.008 286.836 73.047h.255.003c330.812 0 600.109-269.219 600.25-600.055.055-160.343-62.328-311.108-175.649-424.53zm-424.601 923.242h-.195c-89.539-.047-177.344-24.086-253.93-69.531l-18.227-10.805-188.828 49.508 50.414-184.039-11.875-18.867c-49.945-79.414-76.312-171.188-76.273-265.422.109-274.992 223.906-498.711 499.102-498.711 133.266.055 258.516 52 352.719 146.266 94.195 94.266 146.031 219.578 145.992 352.852-.118 274.999-223.923 498.749-498.899 498.749z"/>
+        </svg>    </div>
+</div>                </div>
+            </div>
+                        <span class="ht_ctc_chat_data" 
+                data-no_number=""
+                data-settings="{&quot;number&quot;:&quot;5555984050819&quot;,&quot;pre_filled&quot;:&quot;&quot;,&quot;dis_m&quot;:&quot;show&quot;,&quot;dis_d&quot;:&quot;show&quot;,&quot;css&quot;:&quot;display: none; cursor: pointer; z-index: 99999999;&quot;,&quot;pos_d&quot;:&quot;position: fixed; bottom: 10px; right: 10px;&quot;,&quot;pos_m&quot;:&quot;position: fixed; bottom: 10px; right: 10px;&quot;,&quot;schedule&quot;:&quot;no&quot;,&quot;se&quot;:&quot;no-show-effects&quot;,&quot;ani&quot;:&quot;no-animations&quot;,&quot;url_target_d&quot;:&quot;_blank&quot;,&quot;g_init&quot;:&quot;default&quot;,&quot;g_an_event_name&quot;:&quot;click to chat&quot;,&quot;pixel_event_name&quot;:&quot;Click to Chat by HoliThemes&quot;}" 
+            ></span>
+            <script type="text/html" id="wpb-modifications"> window.wpbCustomElement = 1; </script>	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	<link data-minify="1" rel='stylesheet' id='wc-blocks-style-css' href='https://viveirosaofrancisco.com.br/wp-content/cache/min/1/p/woocommerce/8.9.1/assets/client/blocks/wc-blocks.css?ver=1716821022' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='rs-plugin-settings-css' href='https://viveirosaofrancisco.com.br/wp-content/cache/min/1/wp-content/plugins/revslider/public/assets/css/rs6.css?ver=1716821022' type='text/css' media='all' />
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+#rs-demo-id {}
+</style>
+<script type="text/javascript" id="ht_ctc_app_js-js-extra">
+/* <![CDATA[ */
+var ht_ctc_chat_var = {"number":"5555984050819","pre_filled":"","dis_m":"show","dis_d":"show","css":"display: none; cursor: pointer; z-index: 99999999;","pos_d":"position: fixed; bottom: 10px; right: 10px;","pos_m":"position: fixed; bottom: 10px; right: 10px;","schedule":"no","se":"no-show-effects","ani":"no-animations","url_target_d":"_blank","g_init":"default","g_an_event_name":"click to chat","pixel_event_name":"Click to Chat by HoliThemes"};
+var ht_ctc_variables = {"g_an_event_name":"click to chat","pixel_event_type":"trackCustom","pixel_event_name":"Click to Chat by HoliThemes","g_an_params":["g_an_param_1","g_an_param_2","g_an_param_3"],"g_an_param_1":{"key":"number","value":"{number}"},"g_an_param_2":{"key":"title","value":"{title}"},"g_an_param_3":{"key":"url","value":"{url}"},"pixel_params":["pixel_param_1","pixel_param_2","pixel_param_3","pixel_param_4"],"pixel_param_1":{"key":"Category","value":"Click to Chat for WhatsApp"},"pixel_param_2":{"key":"ID","value":"{number}"},"pixel_param_3":{"key":"Title","value":"{title}"},"pixel_param_4":{"key":"URL","value":"{url}"}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/cache/min/1/wp-content/plugins/click-to-chat-for-whatsapp/new/inc/assets/js/app.js?ver=1716821022" id="ht_ctc_app_js-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/plugins/uncode-js_composer/assets/lib/flexslider/jquery.flexslider.min.js?ver=7.0" id="flexslider-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/cache/min/1/p/woocommerce/8.9.1/assets/js/sourcebuster/sourcebuster.min.js?ver=1716821022" id="sourcebuster-js-js" defer></script>
+<script type="text/javascript" id="wc-order-attribution-js-extra">
+/* <![CDATA[ */
+var wc_order_attribution = {"params":{"lifetime":1.0000000000000000818030539140313095458623138256371021270751953125e-5,"session":30,"ajaxurl":"https:\/\/viveirosaofrancisco.com.br\/wp-admin\/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/cache/min/1/p/woocommerce/8.9.1/assets/js/frontend/order-attribution.min.js?ver=1716821022" id="wc-order-attribution-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/wc-api\/v(.*)|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/viveirosaofrancisco.com.br","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/global.min.js" id="uncode-global-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/utils.min.js" id="uncode-utils-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/menuSystem.min.js" id="uncode-menuSystem-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/disableHoverScroll.min.js" id="uncode-disableHoverScroll-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/animations.min.js" id="uncode-animations-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/tapHover.min.js" id="uncode-tapHover-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/preventDoubleTransition.min.js" id="uncode-preventDoubleTransition-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/printScreen.min.js" id="uncode-printScreen-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/lib/jquery.waypoints.min.js" id="jquery-waypoints-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/lib/jquery.smartmenus.min.js" id="jquery-smartmenus-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/lib/jquery.easing.min.js" id="jquery-easing-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/lib/jquery.mousewheel.min.js" id="jquery-mousewheel-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/lib/owl.carousel2.min.js" id="owl-carousel-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/lib/inview.min.js" id="inview-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/carousel.min.js" id="uncode-carousel-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/lib/ilightbox.min.js" id="ilightbox-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/lightbox.min.js" id="uncode-lightbox-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/lib/share.min.js" id="share-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/share.min.js" id="uncode-share-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/lib/jquery.sticky-kit.min.js" id="jquery-sticky-kit-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/stickyElements.min.js" id="uncode-stickyElements-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/lib/tab.min.js" id="tab-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/tabs.min.js" id="uncode-tabs-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/checkScrollForTabs.min.js" id="uncode-checkScrollForTabs-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/lib/transition.min.js" id="transition-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/widgets.min.js" id="uncode-widgets-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/revslider.min.js" id="uncode-revslider-js" defer></script>
+<script type="text/javascript" id="wc-cart-fragments-js-extra">
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_ecc20da558d1baa012e78dc302390381","fragment_name":"wc_fragments_ecc20da558d1baa012e78dc302390381","request_timeout":"5000"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/cache/min/1/p/woocommerce/8.9.1/assets/js/frontend/cart-fragments.min.js?ver=1716821022" id="wc-cart-fragments-js" data-wp-strategy="defer" defer></script>
+<script type="text/javascript" id="woocommerce-uncode-js-extra">
+/* <![CDATA[ */
+var UncodeWCParameters = {"cart_url":"https:\/\/viveirosaofrancisco.com.br","empty_cart_url":"","redirect_after_add":"","variations_ajax_add_to_cart":"","swatches_with_url_selection":"1","i18n_add_to_cart_text":"Comprar","i18n_variation_add_to_cart_text":"Ver op\u00e7\u00f5es","pa_filter_prefix":"filter_","yith_ajax_wishlist":"","swatches_use_custom_find":"","activate_input_check_on_click":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/woocommerce-uncode.min.js" id="woocommerce-uncode-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/themes/uncode/library/js/app-loader.min.js" id="uncode-app-js" defer></script>
+<script type="text/javascript" src="https://stats.wp.com/e-202430.js" id="jetpack-stats-js" data-wp-strategy="defer" defer></script>
+<script type="text/javascript" id="jetpack-stats-js-after">
+/* <![CDATA[ */
+_stq = window._stq || [];
+_stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"175334983\",\"post\":\"212\",\"tz\":\"0\",\"srv\":\"viveirosaofrancisco.com.br\",\"j\":\"1:13.4.3\"}") ]);
+_stq.push([ "clickTrackerInit", "175334983", "212" ]);
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://viveirosaofrancisco.com.br/wp-content/plugins/wp-rocket/assets/js/heartbeat.js?ver=3.12.4" id="heartbeat-js" defer></script>
+<script type="rocketlazyloadscript"></script><!-- WooCommerce JavaScript -->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+jQuery(function($) { 
+_wca.push({'_en': 'woocommerceanalytics_product_view','blog_id': '175334983', 'ui': 'null', 'url': 'https://viveirosaofrancisco.com.br', 'woo_version': '8.9.1', 'store_admin': '0', 'device': 'desktop', 'template_used': '0', 'additional_blocks_on_cart_page': [],'additional_blocks_on_checkout_page': [],'store_currency': 'BRL', 'cart_page_contains_cart_block': '0', 'cart_page_contains_cart_shortcode': '0', 'checkout_page_contains_checkout_block': '0', 'checkout_page_contains_checkout_shortcode': '0', 'pi': '212', 'pn': 'Uva Niágara Rosa', 'pc': 'Uvas', 'pp': '', 'pt': 'simple', });
+ });
+</script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://viveirosaofrancisco.com.br/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script></body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
